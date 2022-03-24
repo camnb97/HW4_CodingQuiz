@@ -54,23 +54,134 @@
 */
 
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+let quizQuestions = [
+    {
+        question: "What is Javascript?",
+        answers: {
+            a: "Downloadable content",
+            b: "A language",
+            c: "A website for sharing fonts",
+            d: "The person who invented the internet"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "How do you call a function?",
+        answers: {
+            a: "functionName()",
+            b: "dial its phone number",
+            c: "yell",
+            d: "you cant"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "What is CSS?",
+        answers: {
+            a: "stands for 'Call Sherrif Sam'",
+            b: "A layout design",
+            c: "A website for talking with strangers",
+            d: "a way to style webpages"
+        },
+        correctAnswer: "d"
+    },
+    {
+        question: "why don't dingos like babies?",
+        answers: {
+            a: "funny tasting",
+            b: "too much salt",
+            c: "the lady on tv",
+            d: "dingos don;'t liken anybody"
+        },
+        correctAnswer: "c"
+    },
+    {
+        question: "What is Javascript?",
+        answers: {
+            a: "Downloadable content",
+            b: "A language",
+            c: "A website for sharing fonts",
+            d: "The person who invented the internet"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "why don't dingos like babies?",
+        answers: {
+            a: "funny tasting",
+            b: "too much salt",
+            c: "the lady on tv",
+            d: "dingos don;'t liken anybody"
+        },
+        correctAnswer: "c"
+    }
+]
+// var i = 0
+// i+=1
+
+//     console.log(quizQuestions
+//         [i].answers.b)
+
 let countdown = document.querySelector(".timer")
 console.log(countdown)
+let start = document.querySelector("#begin-quiz")
+let bottomAlert = document.querySelector("#bottom-alert")
+let questionOne = document.querySelector("#question")
+let quizQ = document.querySelector("#quiz");
+let nextBtn = document.querySelector("#nextQ")
 let secondsLeft = 90
+let qI = 0
 
+console.log(nextBtn)
 
 function beginQuiz() {
     let timer = setInterval(function () {
+        countdown.innerHTML = secondsLeft;
+        if (secondsLeft <= 0) {
+            clearInterval(timer);
+            bottomAlert.textContent = "Out of time!"
+        }
         secondsLeft--;
-        countdown.textContent = secondsLeft
-    }, 1000 )
+    }, 1000)
 
+    questionOne.textContent = quizQuestions[qI].question
+
+    qI++
+}
+
+function nextQuestion(){
+
+    questionOne.textContent = quizQuestions[qI].question
+
+    qI++
 }
 
 function qOne() {
+    ///some way to make this take up the entire body, or something
 
+    //?..How to make clickable questions..?
+
+    if (true) {
+        qTwo
+    } if (false) {
+        bottomAlert.textContent = "Incorrect!";
+        //?..make timer lose 5 sec ..?
+    } else {
+        bottomAlert.textContent = "Please choose an answer"
+    }
 }
 
-function qTwo() {
+start.addEventListener('click', function() {
+    beginQuiz()
+})
 
-}
+nextBtn.addEventListener('click', function(){
+    console.log(qI)
+    nextQuestion()
+})
+
+//git commit -m "got help from tutor, showed me how to navigate questions array, and how to make the correct answer go to the next question"

@@ -6,12 +6,29 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="./assets/style.css">
-        <h2 class="timer">""</h2>
+        <h2 class="timer"></h2>
     </head>
     <body>
-        <h1>Coding Pop Quiz!</h1>
-        <container class="quiz-question"></container>
+        <container>
+            <div>
+                <div>
+                    <h1>Coding Quiz</h1>
+                    <button id="begin-quiz">Start Quiz</button>
+                </div>
+            </div>
+        </container>
+        
+        <div id="quiz">
+            <p id="question"></p>
+            <button id="nextQ"></button>
+            <button id="wrong1"></button>
+            <button id="wrong2"></button>
+            <button id="wrong3"></button>
+            <p id="bottom-alert"></p>
+            <div id="quiz-results"></div>
+        </div>
         <script src="./index.js" async defer></script>
     </body>
 </html>

@@ -1,13 +1,37 @@
 :root {
-    --dark: rgba(80, 120, 155, 0.411)
+    --dark: rgba(57, 101, 139, 0.411);
+    --light: rgba(133, 169, 199, 0.774);
+    --text: rgb(7, 15, 61);
+    --font: Georgia, 'Times New Roman', Times, serif;
 }
 
 * {
-    background-color: var(--dark);
+    background-color: var(--light);
 }
 h1 {
     text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: var(--font);
     font-weight: bold;
-    color: rgb(47, 7, 83);
+    color: var(--text);
+}
+
+button {
+    font-family: var(--font);
+    width: 40px;
+    align-items: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 4px;
+    background-color: var(--dark);
+}
+#begin-quiz {
+    width: 65px;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: scale(1.06);
+    background-color: var(--light);
 }
